@@ -1,8 +1,20 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
+}
+
+@media (min-width: 640px) {
+  #root {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #root {
+    padding: 2rem;
+  }
 }
 
 .logo {
@@ -40,3 +52,32 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Mobile-first responsive utilities */
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+}
+
+/* Enable touch actions */
+[draggable="true"] {
+  -webkit-user-drag: element;
+  touch-action: manipulation;
+}
+
+/* Improve touch feedback */
+.touch-item {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Support for long-press on mobile */
+@supports (touch-action: manipulation) {
+  .task-item {
+    touch-action: manipulation;
+  }
+}
+
